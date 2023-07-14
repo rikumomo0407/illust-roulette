@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes">
+    <title>イラストルーレット</title>   
+    <script type="module">
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="イラストのお題をランダムで提供">
+    <meta property="og:title" content="illust_roulette">
+    <meta property="og:description" content="roulette for illust ideas.">
+    <meta property="og:image" content="images/png/roulette.png">
+    <meta property="og:image:alt" content="illust_roulette icon">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rikumomo0407.github.io/illust-roulette">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rikumomo0407" />
+    <meta name="twitter:title" content="イラストルーレット" />
+    <meta name="twitter:description" content="イラストのお題をランダムで提供" />
+    <meta name="twitter:image" content="images/png/roulette.png" />
+    <link rel="canonical" href="https://rikumomo0407.github.io/illust-roulette">
+    <link rel="icon" href="images/png/roulette.png">
+    <link rel="apple-touch-icon" href="images/png/roulette.png"/>
+    <meta name="theme-color" content="#FFFFFF">
+</head>
+<body id="pagetop">
+    <!-- <script src="main.js"></script> -->
+    <header>
+        <div id="menu">
+            <script src="menu.js"></script>
+            <input type="checkbox" id="menu-button">
+            <label id="menu-label" for="menu-button">
+                <div id="menuicon"><img src="images/svg/menu.svg"></div>
+                <div id="usericon"><img src="images/png/roulette.png"></div>
+                <div id="username"><span>MENU</span></div>
+            </label>
+            <div id="index">
+                <ul>
+                    <li><a href="#pagetop">トップ</a></li>
+                    <li><a href="#roulette">種族・年齢層</a></li>
+                    <li><a href="#rouletteA">髪型・性別</a></li>
+                    <li><a href="#rouletteB">服装・アイテム</a></li>
+                    <li><a href="#rouletteC">構図・シチュエーション</a></li>
+                    <!-- <li><a href="#qanda">使い方</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="top">
+        <div id="profile-icon">
+            <h1>イラストルーレット</h1>
+            <p id="description">イラストのお題をランダムで提供します</p>
+            <img src="images/png/thumbnail.png">
+        </div>
+    </div>
+    <div id="roulette">
+        <script src="main.js"></script>
+        <div id="panel">
+            <div id="rouletteA">
+                <h2>🧜‍♀️ 種族・年齢層</h2>
+                <div class="main">
+                    <div id="A-result" class="result">獣人</div>
+                    <div class="button">
+                        <input type="checkbox" value="a" id="A-button">
+                        <label class="switch-label" for="A-button">
+                            <div id="A_switch" class="switch"><span>ストップ</span></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="rouletteB">
+                <h2>🧝‍♀️ 髪型・性別</h2>
+                <div class="main">
+                    <div id="B-result" class="result">姫カット</div>
+                    <div class="button">
+                        <input type="checkbox" value="b" id="B-button">
+                        <label class="switch-label" for="B-button">
+                            <div id="B_switch" class="switch"><span>ストップ</span></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="rouletteC">
+                <h2>👗 服装・アイテム</h2>
+                <div class="main">
+                    <div id="C-result" class="result">軍服</div>
+                    <div class="button">
+                        <input type="checkbox" value="c"  id="C-button">
+                        <label class="switch-label" for="C-button">
+                            <div id="C_switch" class="switch"><span>ストップ</span></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="rouletteD">
+                <h2>🌆 構図・シチュエーション</h2>
+                <div class="main">
+                    <div id="D-result" class="result">見つめる</div>
+                    <div class="button">
+                        <input type="checkbox" value="d" id="D-button">
+                        <label class="switch-label" for="D-button">
+                            <div id="D_switch" class="switch"><span>ストップ</span></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="restart">
+                <input type="checkbox" id="restart-button">
+                <label id="menu-label" for="restart-button">
+                    <div class="switch">もう一度回す</div>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div id="illust">
+        <img src="images/png/hachikawa.PNG">
+    </div>
+    <footer>
+        <p>© Copyright 2023 rikumomo0407 All rights reserved.</p>
+    </footer>
+</body>
+</html>
