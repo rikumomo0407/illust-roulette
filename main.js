@@ -10,6 +10,9 @@ window.addEventListener('DOMContentLoaded', function(){
     const b_text = document.getElementById('B_switch');
     const c_text = document.getElementById('C_switch');
     const d_text = document.getElementById('D_switch');
+    const finish_text = document.getElementById('finish_switch');
+
+    const sub = document.getElementById('sub');
 
     // タイムアウトID
     let timeoutID;
@@ -60,40 +63,55 @@ window.addEventListener('DOMContentLoaded', function(){
     }
 
     // ボタンがクリックされたら
-    buttons[1].addEventListener('change', () =>{
-        a_stop = !a_stop;
-        a_text.textContent = a_stop ? "やり直す" : "ストップ";
-        a_text.style.background = a_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-    });
-    buttons[2].addEventListener('change', () =>{
-        b_stop = !b_stop;
-        b_text.textContent = b_stop ? "やり直す" : "ストップ";
-        b_text.style.background = b_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-    });
-    buttons[3].addEventListener('change', () =>{
-        c_stop = !c_stop;
-        c_text.textContent = c_stop ? "やり直す" : "ストップ";
-        c_text.style.background = c_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-    });
-    buttons[4].addEventListener('change', () =>{
-        d_stop = !d_stop;
-        d_text.textContent = d_stop ? "やり直す" : "ストップ";
-        d_text.style.background = d_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-    });
-    buttons[5].addEventListener('change', () =>{
-        a_stop = false;
-        b_stop = false;
-        c_stop = false;
-        d_stop = false;
-        a_text.textContent = "ストップ";
-        b_text.textContent = "ストップ";
-        c_text.textContent = "ストップ";
-        d_text.textContent = "ストップ";
-        a_text.style.background ="linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-        b_text.style.background ="linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-        c_text.style.background ="linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-        d_text.style.background ="linear-gradient(144deg,#ff8176,#d6473a 50%,#dc483c,#e81f1f)";
-    });
-
+    for(let target of buttons){
+        target.addEventListener('change', function (){
+            if(target.value == 'a'){
+                a_stop = !a_stop;
+                a_text.textContent = a_stop ? "やり直す" : "ストップ";
+                a_text.style.background = a_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%)";
+            }
+            if(target.value == 'b'){
+                b_stop = !b_stop;
+                b_text.textContent = b_stop ? "やり直す" : "ストップ";
+                b_text.style.background = b_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%)";
+            }
+            if(target.value == 'c'){
+                c_stop = !c_stop;
+                c_text.textContent = c_stop ? "やり直す" : "ストップ";
+                c_text.style.background = c_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%)";
+            }
+            if(target.value == 'd'){
+                d_stop = !d_stop;
+                d_text.textContent = d_stop ? "やり直す" : "ストップ";
+                d_text.style.background = d_stop ? "linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)" : "linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%)";
+            }
+            if(target.value == 'finish'){
+                a_stop = true;
+                b_stop = true;
+                c_stop = true;
+                d_stop = true;
+                a_text.textContent = "やり直す";
+                b_text.textContent = "やり直す";
+                c_text.textContent = "やり直す";
+                d_text.textContent = "やり直す";
+                a_text.style.background ="linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)";
+                b_text.style.background ="linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)";
+                c_text.style.background ="linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)";
+                d_text.style.background ="linear-gradient(144deg,#57bfff,#19a7ff 50%,#1da1f2 60%,#1a7ee9)";
+                sub.style.display = "block"
+                finish_text.style.background = "linear-gradient(144deg,#c446ff,#a23af7 50%,#b326f5 60%,#ae1ae9)";
+            }
+            if(a_stop && b_stop && c_stop && d_stop){
+                document.getElementById("finish-button").removeAttribute("disabled");
+                sub.style.display = "none"
+                finish_text.style.cursor = "pointer";
+                finish_text.style.background = "linear-gradient(144deg,#c446ff,#a23af7 50%,#b326f5 60%,#ae1ae9)";
+            } else {
+                document.getElementById("finish-button").setAttribute("disabled", true);
+                finish_text.style.cursor = "default";
+                finish_text.style.background = "gray";
+            }
+        });
+    }
     roop();
 });
