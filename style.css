@@ -159,7 +159,7 @@ header{
     width: 100%;
     margin-right: 50px;
     padding: 10px;
-    border: 4px solid rgb(253, 81, 50);
+    border: 4px solid rgb(180, 180, 180);
     border-radius: 5px;
     font-weight: 600;
     font-size: x-large;
@@ -224,6 +224,7 @@ footer{
 
     .result{
         margin-bottom: 20px;
+        font-size: large;
     }
 
     .button{
@@ -233,9 +234,10 @@ footer{
     .switch{
         margin: 0;
     }
+    
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 335px){
     #roulette{
         padding: 0;
         margin: 50px 0;
